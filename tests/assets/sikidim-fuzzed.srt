@@ -1,0 +1,45 @@
+
+
+1
+00:01:00,100 --> 00:01:00,101
+Hello world!
+
+
+
+2
+00:02:14,648 --> 00:02:15,980
+Some words should be written
+here, for the test.
+
+
+
+
+3
+00:03:30,001 --> 00:03:32,190
+<i>Seni gidi fındıkkıran,
+Yılanı deliğinden çıkaran</i>
+
+
+
+
+
+
+
+4
+00:03:32,191 --> 00:03:34,002
+<i>Kaderim püsküllü belam,
+Yakalarsam</i>
+
+
+
+5
+00:04:00,140 --> 00:04:01,810
+Hey, what song is this?
+
+
+
+6
+00:05:10,700 --> 00:05:12,290
+This song? It just popped up randomly.
+
+
