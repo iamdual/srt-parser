@@ -14,6 +14,18 @@ final class TimeParserTest extends TestCase
      */
     public function testTimeParser1(): void
     {
+        $timeParser = new TimeParser('00:00:00,000 --> 00:00:01,002');
+        $time = $timeParser->getTime();
+        $this->assertEquals(0, $time->getBegin());
+        $this->assertEquals(1002, $time->getEnd());
+    }
+
+    /**
+     * @covers \Iamdual\SrtParser\TimeParser
+     * @throws SyntaxErrorException
+     */
+    public function testTimeParser2(): void
+    {
         $timeParser = new TimeParser('00:02:14,648 --> 00:02:15,980');
         $time = $timeParser->getTime();
         $this->assertEquals(134648, $time->getBegin());
@@ -24,11 +36,22 @@ final class TimeParserTest extends TestCase
      * @covers \Iamdual\SrtParser\TimeParser
      * @throws SyntaxErrorException
      */
-    public function testTimeParser2(): void
+    public function testTimeParser3(): void
     {
         $timeParser = new TimeParser('2400:00:00,000 --> 2400:00:00,100');
         $time = $timeParser->getTime();
         $this->assertEquals(8640000000, $time->getBegin());
         $this->assertEquals(8640000100, $time->getEnd());
+    }
+
+    /**
+     * @covers \Iamdual\SrtParser\TimeParser
+     * @throws SyntaxErrorException
+     */
+    public function testTimeParserInvalid(): void
+    {
+        $this->expectException(SyntaxErrorException::class);
+        $timeParser = new TimeParser('00:02:14,648 => 00:02:15,980');
+        $timeParser->getTime();
     }
 }

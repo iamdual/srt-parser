@@ -17,16 +17,17 @@ final class SubtitleParserTest extends TestCase
     public function testSubtitleParser(): void
     {
         foreach (['lf', 'crlf', 'cr', 'fuzzed'] as $type) {
-            $content = file_get_contents(__DIR__ . '/assets/sikidim-' . $type . '.srt');
+            $content = file_get_contents(__DIR__ . '/assets/simarik-' . $type . '.srt');
             $chunks = new Chunks($content);
-            foreach ($chunks->getChunks() as $chunk) {
+            foreach ($chunks->getChunks() as $i => $chunk) {
                 $parser = new SubtitleParser($chunk);
                 $subtitle = $parser->getSubtitle();
                 $this->assertInstanceOf(Subtitle::class, $subtitle);
                 $this->assertIsInt($subtitle->getSequence());
+                $this->assertGreaterThanOrEqual($i + 1, $subtitle->getSequence());
                 $this->assertIsInt($subtitle->getTimeBegin());
-                $this->assertIsInt($subtitle->getTimeEnd());
                 $this->assertGreaterThanOrEqual(1, $subtitle->getTimeBegin());
+                $this->assertIsInt($subtitle->getTimeEnd());
                 $this->assertGreaterThanOrEqual(1, $subtitle->getTimeEnd());
                 $this->assertIsString($subtitle->getContent());
             }
