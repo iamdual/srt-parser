@@ -51,4 +51,14 @@ class TimeParser
             ($minutes * 60 * 1000) +
             ($seconds * 1000) + $milliseconds;
     }
+
+    /** Convert milliseconds into the SRT format */
+    public static function toSrtFormat(int $time_in_ms): string
+    {
+        $hours = $time_in_ms / 60 / 60 / 1000;
+        $minutes = ((int)($time_in_ms / 60 / 1000)) % 60;
+        $seconds = ((int)($time_in_ms / 1000)) % 60;
+        $milliseconds = $time_in_ms % 1000;
+        return sprintf("%02d:%02d:%02d,%03d", $hours, $minutes, $seconds, $milliseconds);
+    }
 }

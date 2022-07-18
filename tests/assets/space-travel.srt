@@ -1,0 +1,15 @@
+1
+00:00:01,100 --> 00:00:02,101
+Rocket launch began.
+
+2
+00:00:03,900 --> 00:00:04,781
+We are on the Earth.
+
+3
+72:56:03,800 --> 72:56:05,001
+We have now reached the Moon.
+
+4
+3600:22:56,090 --> 3600:22:58,128
+We have now reached the Mars.
