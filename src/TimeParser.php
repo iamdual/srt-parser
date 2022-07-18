@@ -9,16 +9,18 @@ use Iamdual\SrtParser\Exceptions\SyntaxErrorException;
 
 class TimeParser
 {
-    const TIME_FORMAT = '/^([0-9]{2,}):([0-9]{2}):([0-9]{2}),([0-9]{3})$/';
+    const TIME_FORMAT = '/^(\d{2,}):(\d{2}):(\d{2}),(\d{3})$/';
 
     private string $time;
 
+    /** @var string $time SRT time (i.e. 00:00:01,100 --> 00:00:04,200) */
     public function __construct(string $time)
     {
         $this->time = $time;
     }
 
     /**
+     * @return Time Parse SRT time and convert it into a Time
      * @throws SyntaxErrorException
      */
     public function getTime(): Time
@@ -42,6 +44,7 @@ class TimeParser
         return new Time($begin, $end);
     }
 
+    /** Calculate time in milliseconds */
     public static function toMilliseconds(int $hours, int $minutes, int $seconds, int $milliseconds): int
     {
         return ($hours * 60 * 60 * 1000) +

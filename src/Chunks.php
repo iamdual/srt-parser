@@ -9,12 +9,14 @@ class Chunks
     private string $content;
     private int $content_length;
 
+    /** @var string $content SRT file content */
     public function __construct(string $content)
     {
         $this->content = Utils::formatNewLine($content);
         $this->content_length = strlen($this->content);
     }
 
+    /** @return array string[] Return subtitle text items in chunks */
     public function getChunks(): array
     {
         $chunks = [];

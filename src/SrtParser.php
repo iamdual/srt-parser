@@ -8,11 +8,13 @@ class SrtParser
 {
     private string $content;
 
+    /** @var string $content SRT file content */
     public function __construct(string $content)
     {
         $this->content = $content;
     }
 
+    /** Create SrtParser instance by a file */
     public static function fromFile(string $filename): self
     {
         $content = file_get_contents($filename);

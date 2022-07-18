@@ -16,6 +16,7 @@ class SubtitleParser
     private string $chunk;
     private int $chunk_length;
 
+    /** @var string $chunk Piece of a subtitle */
     public function __construct(string $chunk)
     {
         $this->chunk = $chunk;
@@ -23,6 +24,7 @@ class SubtitleParser
     }
 
     /**
+     * @return Subtitle Parse the chunk and convert it into a Subtitle
      * @throws SyntaxErrorException
      */
     public function getSubtitle(): Subtitle

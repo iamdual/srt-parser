@@ -6,12 +6,15 @@
  */
 class Utils
 {
-    public static function formatNewLine(string $content): string {
+    /** To standardize newline characters */
+    public static function formatNewLine(string $content): string
+    {
         $content = str_replace("\r\n", "\n", $content);
         $content = str_replace("\r", "\n", $content);
         return $content;
     }
 
+    /** Check if the character is a newline */
     public static function isNewLine(string $char): bool
     {
         return $char == "\n" || $char == "\r";

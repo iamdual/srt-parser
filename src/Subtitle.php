@@ -6,57 +6,58 @@
  */
 class Subtitle
 {
-    /** @var int $sequence Sequence time of the subtitle */
     private int $sequence;
-
-    /** @var int $time_begin Begin of time in milliseconds */
     private int $time_begin;
-
-    /** @var int $time_end End of time in milliseconds */
     private int $time_end;
-
-    /** @var string $content Subtitle content */
     private string $content;
 
+    /** @var string|int $sequence Sequence number of the subtitle */
     public function setSequence(string|int $sequence): self
     {
         $this->sequence = (int)$sequence;
         return $this;
     }
 
+    /** @var string|int $time Begin of time in milliseconds */
     public function setTimeBegin(string|int $time): self
     {
         $this->time_begin = (int)$time;
         return $this;
     }
 
+    /** @var string|int $time End of time in milliseconds */
     public function setTimeEnd(string|int $time): self
     {
         $this->time_end = (int)$time;
         return $this;
     }
 
+    /** @var string $content Subtitle content */
     public function setContent(string $content): self
     {
         $this->content = $content;
         return $this;
     }
 
+    /** Sequence number of the subtitle */
     public function getSequence(): int
     {
         return $this->sequence;
     }
 
+    /** Begin of time in milliseconds */
     public function getTimeBegin(): int
     {
         return $this->time_begin;
     }
 
+    /** End of time in milliseconds */
     public function getTimeEnd(): int
     {
         return $this->time_end;
     }
 
+    /** Subtitle content */
     public function getContent(): string
     {
         return $this->content;

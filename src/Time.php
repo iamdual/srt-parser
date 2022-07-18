@@ -6,29 +6,24 @@
  */
 class Time
 {
-    /** @var int $begin Begin of time in milliseconds */
     private int $begin;
-
-    /** @var int $end End of time in milliseconds */
     private int $end;
 
+    /** @var int $begin Begin of time in milliseconds */
+    /** @var int $end End of time in milliseconds */
     public function __construct(int $begin, int $end)
     {
         $this->begin = $begin;
         $this->end = $end;
     }
 
-    /**
-     * @return int
-     */
+    /** Begin of time in milliseconds */
     public function getBegin(): int
     {
         return $this->begin;
     }
 
-    /**
-     * @return int
-     */
+    /** End of time in milliseconds */
     public function getEnd(): int
     {
         return $this->end;

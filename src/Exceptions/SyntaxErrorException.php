@@ -6,5 +6,4 @@
  */
 class SyntaxErrorException extends \Exception
 {
-
 }
