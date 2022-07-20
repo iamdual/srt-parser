@@ -11,6 +11,7 @@ use PHPUnit\Framework\TestCase;
 final class SubtitleParserTest extends TestCase
 {
     /**
+     * @covers \Iamdual\SrtParser\SubtitleParser
      * @covers \Iamdual\SrtParser\Chunks
      * @throws SyntaxErrorException
      */

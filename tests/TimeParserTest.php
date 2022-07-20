@@ -91,6 +91,7 @@ final class TimeParserTest extends TestCase
 
     /**
      * @covers \Iamdual\SrtParser\TimeParser
+     * @covers \Iamdual\SrtParser\Chunks
      * @covers \Iamdual\SrtParser\SubtitleParser
      */
     public function testTheTimeByAFile(): void

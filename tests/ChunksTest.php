@@ -25,4 +25,19 @@ final class ChunksTest extends TestCase
             $this->assertTrue(strlen($chunks_array[5]) == 70, "6th chunk length invalid on '$type'");
         }
     }
+
+    /**
+     * @covers \Iamdual\SrtParser\Chunks
+     */
+    public function testChunks2(): void
+    {
+        $content = file_get_contents(__DIR__ . '/assets/space-travel.srt');
+        $chunks = new Chunks($content);
+        $chunks_array = $chunks->getChunks();
+        $this->assertCount(4, $chunks_array);
+        $this->assertTrue(strlen($chunks_array[0]) == 52);
+        $this->assertTrue(strlen($chunks_array[1]) == 86);
+        $this->assertTrue(strlen($chunks_array[2]) == 59);
+        $this->assertTrue(strlen($chunks_array[3]) == 63);
+    }
 }
