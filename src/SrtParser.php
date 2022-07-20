@@ -1,6 +1,6 @@
 <?php namespace Iamdual\SrtParser;
 /**
- * @package Iamdual\SrtShifter
+ * @package Iamdual\SrtParser
  * @license Apache License 2.0
  * @link    https://github.com/iamdual/srt-parser
  */
@@ -22,7 +22,7 @@ class SrtParser
     }
 
     /**
-     * @return iterable Subtitle[]
+     * @return Subtitle[]
      * @throws Exceptions\SyntaxErrorException
      */
     public function getSubtitles(): iterable
